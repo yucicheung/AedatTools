@@ -300,7 +300,7 @@ elseif strcmp(info.source, 'Dvs128')
 		data.polarity.x = uint16(bitshift(bitand(allAddr(polarityLogical), xMask), -xShiftBits));
 		% Polarity bit
 		polBit = 1;
-		data.polarity.polarity = bitget(allAddr(polarityLogical), polBit) == 1;
+		data.polarity.polarity = bitget(allAddr(polarityLogical), polBit) == 0;
     end	
     
 %% Davis
