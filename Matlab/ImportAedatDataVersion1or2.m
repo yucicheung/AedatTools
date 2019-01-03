@@ -197,13 +197,15 @@ allTs = uint32(fread(fileHandle, numEventsToRead, addrPrecision, numBytesPerAddr
 
 if isfield(importParams, 'startTime')
     disp('Trimming to start time ...')
+	startTime = importParams.startTime;
 	tempIndex = allTs >= startTime * 1e6;
 	allAddr = allAddr(tempIndex);
 	allTs	= allTs(tempIndex);
 end
 
 if isfield(importParams, 'endTime')
-    disp('Trimming to end time ...')    
+    disp('Trimming to end time ...')
+	endTime = importParams.endTime; 
 	tempIndex = allTs <= endTime * 1e6;
 	allAddr = allAddr(tempIndex);
 	allTs	= allTs(tempIndex);
